@@ -2,4 +2,4 @@
 *.csv
 *.txt
 *.ipynb_checkpoints/
-*/data/
+*/data/*
