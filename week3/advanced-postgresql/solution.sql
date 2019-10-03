@@ -52,7 +52,6 @@ ORDER BY sales_royalty DESC
 LIMIT 3;
 
 /* CHALLENGE 6 */
-
 SELECT titleauthor.au_id, titleauthor.title_id, COALESCE(titles.price::FLOAT*sales.qty*titles.royalty::FLOAT/100*titleauthor.royaltyper/100, 0) AS sales_royalty
 INTO TEMP TABLE author_sales
 FROM titleauthor LEFT JOIN titles ON titleauthor.title_id = titles.title_id
@@ -66,7 +65,6 @@ ORDER BY sales DESC
 LIMIT 3;
 
 /* CHALLENGE 7 */
-
 SELECT author_sales.au_id, COALESCE(SUM(sales_royalty), 0) AS profits
 INTO TABLE most_profiting_authors
 FROM author_sales
